@@ -196,7 +196,7 @@ export const ConnectionForm: React.FC<ConnectionFormProps> = ({
 
   const errorMessage = submitError ? generateMessageFromError(submitError) : null;
   const displayedErrorMessage = (isValid: boolean) => {
-    return errorMessage ?? !isValid ? formatMessage({ id: "connectionForm.validation.error" }) : null;
+    return errorMessage ?? (!isValid ? formatMessage({ id: "connectionForm.validation.error" }) : null);
   };
 
   const frequencies = useFrequencyDropdownData(connection.scheduleData);
